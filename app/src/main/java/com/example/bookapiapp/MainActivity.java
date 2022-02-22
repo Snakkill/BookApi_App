@@ -19,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void searchBooks(View view) {
-        String queryString =mBookInput.getText().toString();
+        String queryString = mBookInput.getText().toString();
         mTitleText=findViewById(R.id.result1);
         mAuthorText=findViewById(R.id.result2);
+        new FetchBookTask(mTitleText, mAuthorText).execute(queryString);
+
+
     }
 }
